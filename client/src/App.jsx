@@ -48,27 +48,37 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className=""> 
-        <form action="">
-          <input 
-          type="text" 
-          placeholder='ex: vpesneaud@gmail.com' 
-          onChange={this.emailValue}/>
+      <section className="login-landing-container">
+        <div className="login-form-container"> 
+          <form action="">
 
-          <input 
-          type="text" 
-          onChange={this.passwordValue}/>
+            <h1>INtranet</h1>
 
-          <div 
-          onClick={this.onLogin}>send
-          </div>
+            <input 
+            type="text" 
+            placeholder='ex: vpesneaud@gmail.com' 
+            onChange={this.emailValue}/>
 
-          <p>
-          owen.lopez@example.com owen.lopez
-          </p>
-          
-        </form>
-      </div>
+            <input 
+            type="password" 
+            onChange={this.passwordValue}/>
+
+            <div 
+            className="send-button"
+            onClick={this.onLogin}>Se connecter
+            </div>
+
+            <p>
+            owen.lopez@example.com owen.lopez
+            </p>
+
+            <p>
+            admin@admin.com admin
+            </p>
+            
+          </form>
+        </div>
+      </section>
     )
   }
 }

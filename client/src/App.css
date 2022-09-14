@@ -1,3 +1,45 @@
 body {
   font-family: Source Sans Pro,Tahoma,sans-serif;
 }
+
+.login-landing-container{
+  background: linear-gradient(45deg,#ff8737 29.25%,#f60 100%) no-repeat fixed;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-form-container {
+  height: 100vh;
+  background-color: white;
+  width: 30vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+input {
+  width: 60%;
+  height: 50px;
+  margin-bottom: 20px;
+  background-color: #f7f7f9;
+  border-radius: 0.2rem;
+  border: 1px black solid;
+}
+
+.send-button {
+  width: 60%;
+  height: 40px;
+  background: linear-gradient(45deg,#ff8737 29.25%,#f60 100%) no-repeat fixed;
+  border-radius: 0.2rem;
+  border: 1px black solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
