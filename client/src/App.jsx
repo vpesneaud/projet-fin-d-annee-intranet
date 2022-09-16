@@ -1,9 +1,11 @@
 import React, { Component } from "react"
 import './App.css'
-import {loginData} from './services/services'
+import { loginData } from './services/services'
+import { setMainUser } from "./features/mainUser"
+import { store } from "./app/store"
+import { withRouter } from "./withRouter"
 
-
-export default class App extends Component {
+class App extends Component {
 
   state = {
     email: '',
@@ -11,39 +13,24 @@ export default class App extends Component {
   }
 
   emailValue = (event) => {
-    console.log('value is:', event.target.value);
     this.setState({
       email: event.target.value
     })
-    console.log(this.state)
   }
 
   passwordValue = (event) => {
-    console.log('value is:', event.target.value);
     this.setState({
       password: event.target.value
     })
-    console.log(this.state)
   }
 
   onLogin = (event) => {
     loginData(this.state.email, this.state.password).then(response => {
-      localStorage.setItem('user', JSON.stringify(response))
-      window.location.href='/home'
+      sessionStorage.setItem('user', JSON.stringify(response))
+      store.dispatch(setMainUser(response))
+      this.props.navigate('/home');
       }
-    )  
-  }
-
-  componentDidMount() {
-    window.localStorage.removeItem('user') 
-  }
-
-  componentDidUpdate() {
-    if (window.localStorage.getItem('user')) {
-      console.log('mon cul')
-    } else {
-      console.log('ma zeub')
-    }
+    )
   }
 
   render() {
@@ -58,6 +45,7 @@ export default class App extends Component {
             type="text" 
             placeholder='ex: vpesneaud@gmail.com' 
             onChange={this.emailValue}/>
+            
 
             <input 
             type="password" 
@@ -82,3 +70,5 @@ export default class App extends Component {
     )
   }
 }
+
+export default withRouter(App);

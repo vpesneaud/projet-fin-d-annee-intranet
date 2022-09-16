@@ -8,5 +8,15 @@ export function loginData (email, password) {
           email: email,
           password: password
         },
-      })
+      }).then(response => response.data)
+}
+
+export function randomUser (token) {
+  return axios({
+    method: 'get',
+    url: 'http://localhost:7000/api/collaborateurs/random',
+    headers: {
+      Authorization: 'Bearer ' + token
+    }
+  }).then(response => response.data)
 }

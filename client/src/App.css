@@ -30,16 +30,21 @@ input {
   margin-bottom: 20px;
   background-color: #f7f7f9;
   border-radius: 0.2rem;
-  border: 1px black solid;
+  border: 1px rgba(0, 0, 0, 0.226) solid;
+  padding: 0 10px 0 10px;
 }
 
 .send-button {
-  width: 60%;
+  width: 63%;
   height: 40px;
   background: linear-gradient(45deg,#ff8737 29.25%,#f60 100%) no-repeat fixed;
   border-radius: 0.2rem;
-  border: 1px black solid;
+  border: 1px rgba(0, 0, 0, 0.226) solid;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.send-button:hover {
+  cursor: pointer;
 }

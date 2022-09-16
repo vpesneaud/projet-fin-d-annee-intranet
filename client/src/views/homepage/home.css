@@ -1,0 +1,39 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-cards-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-cards-container h1 {
+    font-size: 3rem;
+}
+
+.cards-button-wrapper {
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+}
+
+.cards-button-wrapper div {
+    background: linear-gradient(45deg,#ff8737 29.25%,#f60 100%) no-repeat fixed;
+    width: 49%;
+    margin-right: 5px;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.cards-button-wrapper div:hover {
+    cursor: pointer;
+  }

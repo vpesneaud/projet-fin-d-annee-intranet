@@ -1,0 +1,13 @@
+.cards-wrapper {
+    display: flex;
+    width: 40vw;
+    margin-top: 20px;
+    height: 30vh;
+    box-shadow: 5px 0 5px #0000001a;
+}
+
+.card-picture {
+    margin-right: 20px;
+    width: 33%;
+    border-radius: 5px 0 0 5px;
+}

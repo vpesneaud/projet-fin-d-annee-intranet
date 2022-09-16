@@ -5,11 +5,7 @@ import { Link } from "react-router-dom"
 export default class Navbar extends Component {
 
     state = {
-        userData: JSON.parse(localStorage.user)
-    }
-
-    componentDidMount() {
-        console.log(this.state)
+        userData: JSON.parse(sessionStorage.user)
     }
 
     render() {
@@ -20,7 +16,7 @@ export default class Navbar extends Component {
                 </div>
                 <div className="navbar-div-right">
 
-                { this.state.userData.data.user.isAdmin === true && (
+                { this.state.userData.user.isAdmin === true && (
                     <Link to="/ajouter-collaborateur">
                         <p>Ajouter</p>
                     </Link>
@@ -32,7 +28,7 @@ export default class Navbar extends Component {
                     </p>
                 </Link>
 
-                <img src={this.state.userData.data.user.photo} alt="user profile picture" className="profile-picture-navbar"/>
+                <img src={this.state.userData.user.photo} alt="user profile picture" className="profile-picture-navbar"/>
 
                 <Link to="/">
                     <p>
