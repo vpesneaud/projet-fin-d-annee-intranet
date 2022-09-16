@@ -14,7 +14,7 @@ body {
   width: 30vw;
 }
 
-form {
+.login-form {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -24,7 +24,7 @@ form {
   margin: 0;
 }
 
-input {
+.login-input {
   width: 60%;
   height: 50px;
   margin-bottom: 20px;

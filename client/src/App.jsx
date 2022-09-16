@@ -37,19 +37,21 @@ class App extends Component {
     return (
       <section className="login-landing-container">
         <div className="login-form-container"> 
-          <form action="">
+          <form action="" className="login-form">
 
             <h1>INtranet</h1>
 
             <input 
             type="text" 
             placeholder='ex: vpesneaud@gmail.com' 
-            onChange={this.emailValue}/>
+            onChange={this.emailValue}
+            className="login-input"/>
             
 
             <input 
             type="password" 
-            onChange={this.passwordValue}/>
+            onChange={this.passwordValue}
+            className="login-input"/>
 
             <div 
             className="send-button"

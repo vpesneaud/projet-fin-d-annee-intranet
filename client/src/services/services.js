@@ -20,3 +20,13 @@ export function randomUser (token) {
     }
   }).then(response => response.data)
 }
+
+export function coworkers (token) {
+  return axios({
+    method: 'get',
+    url: 'http://localhost:7000/api/collaborateurs',
+    headers: {
+      Authorization: 'Bearer ' + token
+    }
+  }).then(response => response.data)
+}

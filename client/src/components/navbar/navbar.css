@@ -26,3 +26,18 @@ nav div {
     margin: 0 20px 0 20px;
 }
 
+.link {
+    text-decoration: none;
+    padding:0 10px 0 10px;
+    color: black;
+    font-weight: 700;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: 2s ease;
+}
+
+.link:hover {
+    background: linear-gradient(45deg,#bd5109b0 29.25%,rgba(202, 81, 1, 0.74) 100%) no-repeat fixed;
+}
+

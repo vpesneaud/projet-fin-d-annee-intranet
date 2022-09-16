@@ -17,12 +17,13 @@ export default class Navbar extends Component {
                 <div className="navbar-div-right">
 
                 { this.state.userData.user.isAdmin === true && (
-                    <Link to="/ajouter-collaborateur">
+                    <Link to="/add-user" className="link">
                         <p>Ajouter</p>
                     </Link>
+                    
                 )}
 
-                <Link to="/collaborateurs">
+                <Link to="/collaborateurs" className="link">
                     <p>
                         Liste
                     </p>
@@ -30,7 +31,7 @@ export default class Navbar extends Component {
 
                 <img src={this.state.userData.user.photo} alt="user profile picture" className="profile-picture-navbar"/>
 
-                <Link to="/">
+                <Link to="/" className="link">
                     <p>
                         se deconnecter
                     </p>

@@ -36,4 +36,5 @@
 
 .cards-button-wrapper div:hover {
     cursor: pointer;
+    background: linear-gradient(45deg,#bd5109b0 29.25%,rgba(202, 81, 1, 0.74) 100%) no-repeat fixed;
   }

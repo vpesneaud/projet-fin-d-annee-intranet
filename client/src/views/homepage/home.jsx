@@ -44,7 +44,8 @@ export default class Home extends Component {
                     country={this.state.randomUser.city + ', ' + this.state.randomUser.country}
                     email={this.state.randomUser.email}
                     phone={this.state.randomUser.phone}
-                    birthday={this.state.randomUser.birthdate}/>
+                    birthday={this.state.randomUser.birthdate}
+                    id={this.state.randomUser.id}/>
                 </div>
                 <div className="cards-button-wrapper">
                     <div>

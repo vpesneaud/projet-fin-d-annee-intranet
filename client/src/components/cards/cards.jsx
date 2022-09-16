@@ -21,9 +21,12 @@ export default class Cards extends Component {
                     <p>{this.props.birthday}</p>
                     <div>
                     { this.state.user.mainUser.mainUser.user.isAdmin === true && (
-                    <Link to="/modifier-collaborateur">
-                        <p>Modifier</p>
-                    </Link>
+                        <div className="admin-control-div">
+                            <Link to={'/collaborateur/' + this.props.id} >
+                            <p>modifier</p>
+                            </Link>
+                            <p>supprimer</p>
+                        </div>
                         )}
                     </div>
                 </div>
