@@ -30,3 +30,17 @@ export function coworkers (token) {
     }
   }).then(response => response.data)
 }
+
+export function addNewUser (token) {
+  return axios({
+    method: 'post',
+    url: 'http://localhost:7000/api/collaborateurs',
+    data: {
+      email: email,
+      password: password
+    },
+    headers: {
+      Authorization: 'Bearer ' + token
+    }
+  })
+}

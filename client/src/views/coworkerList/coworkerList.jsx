@@ -5,23 +5,49 @@ import { store } from "../../app/store"
 import { coworkers } from "../../services/services"
 import './coworkerList.css'
 
+
+
 export default class CoworkerList extends Component {
 
     state = {
-        coworkerList: ''
+        coworkerList: '',
+        searchbarValue: '',
+        option: 'firstname'
     }
 
     componentDidMount() {
         coworkers(store.getState().mainUser.mainUser.token).then(response => {
             console.log(response)
             this.setState({
-                coworkerList: response
+                coworkerList: response,
+                coworkersListFull: response,
             })
         })
     }
 
     componentDidUpdate() {
-            console.log('fdsfdsfdsfdsfsdfds',this.state.coworkerList)
+        this.selectValue = (event) => {
+            console.log(event.target.value)
+            this.setState({
+                option: event.target.value,
+                coworkerList: this.state.coworkersListFull
+            })
+          }
+        this.searchValue = (event) => {
+            if (event.target.value === '') {
+                console.log('la search bar na pas de value')
+                this.setState({
+                    coworkerList: this.state.coworkersListFull
+                })
+            } else {
+                console.log(this.state)
+            this.setState({
+                searchbarValue: event.target.value,
+                coworkerList: this.state.coworkersListFull.filter(character => {
+                    return character[this.state.option].includes(event.target.value)})
+                })
+            }
+          }
     }
 
     render() {
@@ -29,10 +55,16 @@ export default class CoworkerList extends Component {
             <section className="list-container">
                 <Navbar />
                 <form>
-                    <input type="text" />
-                    <select>
-                        <option value="Nom">Nom</option>
-                        <option value="Ville">Ville</option>
+                    <input 
+                    type="text" 
+                    onChange={this.searchValue}
+                    name="textsearch"/>
+                    <select 
+                    onChange={this.selectValue}
+                    name="selectchange">
+                        <option value="firstname">Nom</option>
+                        <option value="city">Ville</option>
+                        <option value="service">Service</option>
                     </select>
                 </form>
                 <div className="cards-container-list">
