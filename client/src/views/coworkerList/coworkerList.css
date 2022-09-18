@@ -9,3 +9,30 @@
     flex-wrap: wrap;
     width: 80vw;
 }
+
+.search-form {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80vw;
+    margin: 50px 0 20px 0;
+}
+
+.search-input {
+    width: 30%;
+    height: 5vh;
+    margin-bottom: 20px;
+    background-color: #f7f7f9;
+    border-radius: 0.2rem;
+    border: 1px rgba(0, 0, 0, 0.226) solid;
+    padding: 0 10px 0 10px;
+}
+
+.select-input {
+    width: 30%;
+    height: 5vh;
+    margin-bottom: 20px;
+    background-color: #f7f7f9;
+    border-radius: 0.2rem;
+    border: 1px rgba(0, 0, 0, 0.226) solid;
+    padding: 0 10px 0 10px;
+}

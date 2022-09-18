@@ -31,13 +31,22 @@ export function coworkers (token) {
   }).then(response => response.data)
 }
 
-export function addNewUser (token) {
+export function addNewUser (token, gender, firstname, lastname, password, email, phone, birthdate, city, country, photo, service) {
   return axios({
     method: 'post',
     url: 'http://localhost:7000/api/collaborateurs',
     data: {
+      gender: gender,
+      firstname: firstname,
+      lastname: lastname,
+      password: password,
       email: email,
-      password: password
+      phone: phone,
+      birthdate: birthdate,
+      city: city,
+      country: country,
+      photo: photo,
+      service: service
     },
     headers: {
       Authorization: 'Bearer ' + token

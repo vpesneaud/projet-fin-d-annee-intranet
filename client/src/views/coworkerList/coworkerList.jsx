@@ -54,14 +54,18 @@ export default class CoworkerList extends Component {
         return(
             <section className="list-container">
                 <Navbar />
-                <form>
+                <form className="search-form">
                     <input 
                     type="text" 
+                    placeholder="Recherche"
                     onChange={this.searchValue}
-                    name="textsearch"/>
+                    name="textsearch"
+                    className="search-input"/>
+
                     <select 
                     onChange={this.selectValue}
-                    name="selectchange">
+                    name="selectchange"
+                    className="select-input">
                         <option value="firstname">Nom</option>
                         <option value="city">Ville</option>
                         <option value="service">Service</option>

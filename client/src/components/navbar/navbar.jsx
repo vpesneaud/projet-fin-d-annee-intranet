@@ -29,7 +29,9 @@ export default class Navbar extends Component {
                     </p>
                 </Link>
 
+                <Link to={"/collaborateur/" + this.state.userData.user.id} className="link">
                 <img src={this.state.userData.user.photo} alt="user profile picture" className="profile-picture-navbar"/>
+                </Link>
 
                 <Link to="/" className="link">
                     <p>
