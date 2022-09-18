@@ -31,7 +31,7 @@ export default class ModifyUserForm extends Component {
                 <Navbar/>
                 {this.state.modifyUserData !== '' && (
                     <Form
-                    id={window.location.href.match(/\d+$/)}
+                    id={this.state.modifyUserData.id}
                     gender={this.state.modifyUserData.gender}
                     firstname={this.state.modifyUserData.firstname}
                     lastname={this.state.modifyUserData.lastname}

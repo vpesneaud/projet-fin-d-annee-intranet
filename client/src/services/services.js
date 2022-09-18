@@ -66,7 +66,7 @@ export function getCoworker (token, id) {
 
 export function modifyUser (token, id, gender, firstname, lastname, password, email, phone, birthdate, city, country, photo, service) {
   return axios({
-    method: 'post',
+    method: 'put',
     url: 'http://localhost:7000/api/collaborateurs/' + id,
     data: {
       gender: gender,

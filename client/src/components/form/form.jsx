@@ -93,7 +93,7 @@ export default class Form extends Component {
       }  
 
       componentDidMount() {
-          console.log('fdsfsdfs',this.props)
+          console.log('fdsfsdfs', this.state.userdata.user)
       }
     
     sendForm = () =>{
@@ -103,7 +103,8 @@ export default class Form extends Component {
                 console.log(response)
             })
         } else {
-            modifyUser(this.state.userdata.token, this.state.userdata.id, this.state.gender, this.state.firstname, this.state.lastname, this.state.password, this.state.email, this.state.phone, this.state.birthdate, this.state.city, this.state.country, this.state.photo, this.state.service)
+          console.log(this.state.userdata.id)
+            modifyUser(this.state.userdata.token, this.state.id, this.state.gender, this.state.firstname, this.state.lastname, this.state.password, this.state.email, this.state.phone, this.state.birthdate, this.state.city, this.state.country, this.state.photo, this.state.service)
             .then(response => {
                 console.log(response)
             })
