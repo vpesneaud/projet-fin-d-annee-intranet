@@ -14,7 +14,7 @@
 }
 
 .home-cards-container h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
 }
 
 .cards-button-wrapper {
@@ -32,9 +32,51 @@
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    padding: 5px;
 }
 
 .cards-button-wrapper div:hover {
     cursor: pointer;
     background: linear-gradient(45deg,#bd5109b0 29.25%,rgba(202, 81, 1, 0.74) 100%) no-repeat fixed;
   }
+
+div .hello {
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .home-cards-container h1 {
+        font-size: 2rem;
+    }
+
+    .home-cards-container {
+        width: 80vw;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .home-cards-container h1 {
+        font-size: 2rem;
+    }
+
+    .home-cards-container {
+        width: 80vw;
+        justify-content: flex-start;
+        height: auto;
+        margin: 5vh 0 5vh 0;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    .cards-button-wrapper {
+        width: 80vw;
+    }
+    
+    .home-cards-container h1 {
+        font-size: 1.3rem;
+    }
+
+    .cards-button-wrapper div {
+        font-size: 0.9rem;
+    }
+}

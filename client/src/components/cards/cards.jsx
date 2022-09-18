@@ -38,12 +38,12 @@ export default class Cards extends Component {
                     <p>{this.props.birthday}</p>
                     <div>
                     { this.state.user.mainUser.mainUser.user.isAdmin === true && this.props.name !== 'Admin' && (
-                        <div className="admin-control-div">
+                        <section className="admin-control-div">
                             <Link to={'/collaborateur/' + this.props.id} className="cards-button">
                             <p>modifier</p>
                             </Link>
                             <p className="cards-button" onClick={this.remove}>supprimer</p>
-                        </div>
+                        </section>
                         )}
                     </div>
                 </div>

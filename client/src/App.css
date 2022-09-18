@@ -48,3 +48,24 @@ body {
 .send-button:hover {
   cursor: pointer;
 }
+
+@media screen and (max-width: 1050px) {
+  .login-form-container {
+    width: 100vw;
+  }
+
+  .login-form {
+    justify-content: flex-start;
+  }
+  
+  .login-input {
+    width: 80%;
+    margin: 20px 0 20px;
+  }
+
+  .send-button {
+    width: 83%;
+    margin-top: 20px;
+  }
+}
+

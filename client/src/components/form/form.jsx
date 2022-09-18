@@ -91,10 +91,6 @@ export default class Form extends Component {
             isAdmin: event.target.value
         })
       }  
-
-      componentDidMount() {
-          console.log('fdsfsdfs', this.state)
-      }
     
     sendForm = () =>{
         if (window.location.href.includes('add-user')) {

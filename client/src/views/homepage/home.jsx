@@ -49,7 +49,7 @@ export default class Home extends Component {
                 </div>
                 <div className="cards-button-wrapper">
                     <div>
-                       <a href={'mailto:' + this.state.randomUser.email}> Lui dire bonjour </a>
+                       <a href={'mailto:' + this.state.randomUser.email} className="hello"> Lui dire bonjour </a>
                     </div>
                     <div onClick={this.reloadRandomUser}>
                         Rencontrez un nouveau collaborateur

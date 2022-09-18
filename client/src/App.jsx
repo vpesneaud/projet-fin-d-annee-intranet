@@ -36,7 +36,6 @@ class App extends Component {
   render() {
     return (
       <section className="login-landing-container">
-        <h1>la plateforme qui vous permet de découvrir vos collaborateurs</h1>
         <div className="login-form-container"> 
           <form action="" className="login-form">
 
@@ -44,13 +43,14 @@ class App extends Component {
 
             <input 
             type="text" 
-            placeholder='ex: vpesneaud@gmail.com' 
+            placeholder='email' 
             onChange={this.emailValue}
             className="login-input"/>
             
 
             <input 
-            type="password" 
+            type="password"
+            placeholder="password"
             onChange={this.passwordValue}
             className="login-input"/>
 
@@ -58,14 +58,6 @@ class App extends Component {
             className="send-button"
             onClick={this.onLogin}>Se connecter
             </div>
-
-            <p>
-            owen.lopez@example.com owen.lopez
-            </p>
-
-            <p>
-            admin@admin.com admin
-            </p>
             
           </form>
         </div>
