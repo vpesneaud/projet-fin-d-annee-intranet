@@ -2,12 +2,29 @@ import { store } from "../../app/store"
 import React, { Component } from "react"
 import './cards.css'
 import { Link } from "react-router-dom"
+import { removeUser } from "../../services/services"
 
 export default class Cards extends Component {
 
     state = {
-        user: store.getState('mainUser')
+        user: store.getState('mainUser'),
+        id: this.props.id
     }
+
+     remove = () => {  
+         removeUser(this.state.user.mainUser.mainUser.token, this.state.id).then(response => {
+             console.log(response)
+         })
+         window.alert('un collaborateur a été supprimé')
+     }
+
+     componentDidUpdate() {
+         if (this.state.id === undefined) {
+             this.setState({
+                 id: this.props.id
+             })
+         }
+     }
 
     render() {
         return (
@@ -20,12 +37,12 @@ export default class Cards extends Component {
                     <p>{this.props.phone}</p>
                     <p>{this.props.birthday}</p>
                     <div>
-                    { this.state.user.mainUser.mainUser.user.isAdmin === true && (
+                    { this.state.user.mainUser.mainUser.user.isAdmin === true && this.props.name !== 'Admin' && (
                         <div className="admin-control-div">
-                            <Link to={'/collaborateur/' + this.props.id} >
+                            <Link to={'/collaborateur/' + this.props.id} className="cards-button">
                             <p>modifier</p>
                             </Link>
-                            <p>supprimer</p>
+                            <p className="cards-button" onClick={this.remove}>supprimer</p>
                         </div>
                         )}
                     </div>

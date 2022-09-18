@@ -86,3 +86,13 @@ export function modifyUser (token, id, gender, firstname, lastname, password, em
     }
   })
 }
+
+export function removeUser (token, id) {
+  return axios({
+    method: 'delete',
+    url: 'http://localhost:7000/api/collaborateurs/' + id,
+    headers: {
+      Authorization: 'Bearer ' + token
+    }
+  })
+}

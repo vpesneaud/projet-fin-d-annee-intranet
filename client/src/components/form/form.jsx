@@ -93,7 +93,7 @@ export default class Form extends Component {
       }  
 
       componentDidMount() {
-          console.log('fdsfsdfs', this.state.userdata.user)
+          console.log('fdsfsdfs', this.state)
       }
     
     sendForm = () =>{
@@ -115,18 +115,18 @@ export default class Form extends Component {
         return(
             <div className="user-form-container">
                 <form className="form-modify-add-user">
-                    <div>gender: <input type="text" value={this.state.gender} onChange={this.genderValue}/></div>
-                    <div>firstname: <input type="text" value={this.state.firstname} onChange={this.firstnameValue}/></div>
-                    <div>lastname: <input type="text" value={this.state.lastname} onChange={this.lastnameValue}/></div>
+                    <div>gender: <input type="text" value={this.state.gender} onChange={this.genderValue} placeholder="male / female"/></div>
+                    <div>firstname: <input type="text" value={this.state.firstname} onChange={this.firstnameValue} placeholder="name"/></div>
+                    <div>lastname: <input type="text" value={this.state.lastname} onChange={this.lastnameValue} placeholder="lastname"/></div>
                     {window.location.href.includes('add-user') && (<div>password: <input type="text" value={this.state.password} onChange={this.passwordValue}/></div>)}
-                    <div>email: <input type="text" value={this.state.email} onChange={this.emailValue}/></div>
-                    <div>phone: <input type="text" value={this.state.phone} onChange={this.phoneValue}/></div>
-                    <div>birthdate: <input type="text" value={this.state.birthdate} onChange={this.birthdateValue}/></div>
-                    <div>city: <input type="text" value={this.state.city} onChange={this.cityValue}/></div>
-                    <div>country: <input type="text" value={this.state.country} onChange={this.countryValue}/></div>
-                    <div>photo: <input type="text" value={this.state.photo} onChange={this.photoValue}/></div>
-                    <div>service: <input type="text" value={this.state.service} onChange={this.serviceValue}/></div>
-                    {window.location.href.includes('add-user') && (<div>isAdmin: <input type="text" value={this.state.isAdmin} onChange={this.isAdminValue}/></div>)}
+                    <div>email: <input type="text" value={this.state.email} onChange={this.emailValue} placeholder="example@example.com"/></div>
+                    <div>phone: <input type="text" value={this.state.phone} onChange={this.phoneValue} placeholder="01-02-03-04-05"/></div>
+                    <div>birthdate: <input type="text" value={this.state.birthdate} onChange={this.birthdateValue} placeholder="YYYY/MM/DD"/></div>
+                    <div>city: <input type="text" value={this.state.city} onChange={this.cityValue} placeholder="Paris, Marseille..."/></div>
+                    <div>country: <input type="text" value={this.state.country} onChange={this.countryValue} placeholder="France"/></div>
+                    <div>photo: <input type="text" value={this.state.photo} onChange={this.photoValue} placeholder="https://..."/></div>
+                    <div>service: <input type="text" value={this.state.service} onChange={this.serviceValue} placeholder="Technique / Client/ Marketing"/></div>
+                    {window.location.href.includes('add-user') && (<div>isAdmin: <input type="text" value={this.state.isAdmin} onChange={this.isAdminValue} placeholder="true / false"/></div>)}
                 </form>
                 {window.location.href.includes('add-user') ? (<div className="add-user-btn" onClick={this.sendForm}>Ajouter</div>)
                  :

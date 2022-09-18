@@ -21,10 +21,6 @@ export default class ModifyUserForm extends Component {
         })
     }
 
-    componentDidUpdate() {
-        console.log('update', this.state)
-    }
-
     render() {
         return(
             <section className="user-form-section">

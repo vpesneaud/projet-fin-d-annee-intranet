@@ -40,7 +40,7 @@ export default class Home extends Component {
                     <h2>Connaissez-vous?</h2>
                     <Cards 
                     imgSRC={this.state.randomUser.photo}
-                    name={this.state.randomUser.firstname}
+                    name={this.state.randomUser.firstname + ' ' + this.state.randomUser.lastname}
                     country={this.state.randomUser.city + ', ' + this.state.randomUser.country}
                     email={this.state.randomUser.email}
                     phone={this.state.randomUser.phone}
