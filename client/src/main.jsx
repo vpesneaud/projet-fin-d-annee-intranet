@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CoworkerList from './views/coworkerList/coworkerList'
 import AddUserForm from './views/addUserForm/addUserForm'
+import ModifyUserForm from './views/modifyUserForn/modifyUserForm'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/" element={<App />} />
           <Route path="/collaborateurs" element={<CoworkerList />} />
           <Route path="/add-user" element={<AddUserForm />} />
+          <Route path="/collaborateur/:collaborateurID" element={<ModifyUserForm />} />
         </Routes>
       </BrowserRouter>
     </Provider>

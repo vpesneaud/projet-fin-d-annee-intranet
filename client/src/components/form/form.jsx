@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import "./form.css"
-import { addNewUser } from '../../services/services'
+import { addNewUser, modifyUser } from '../../services/services'
 
 export default class Form extends Component {
 
@@ -17,7 +17,8 @@ export default class Form extends Component {
         photo: this.props.photo,
         service: this.props.service,
         isAdmin: this.props.isAdmin,
-        password: this.props.password
+        password: this.props.password,
+        id: this.props.id
     }
 
     genderValue = (event) => {
@@ -92,16 +93,17 @@ export default class Form extends Component {
       }  
 
       componentDidMount() {
-          console.log(this.props, this.state.userdata.token)
-      }
-
-      componentDidUpdate() {
-          console.log(this.state)
+          console.log('fdsfsdfs',this.props)
       }
     
     sendForm = () =>{
         if (window.location.href.includes('add-user')) {
             addNewUser(this.state.userdata.token, this.state.gender, this.state.firstname, this.state.lastname, this.state.password, this.state.email, this.state.phone, this.state.birthdate, this.state.city, this.state.country, this.state.photo, this.state.service, this.state.isAdmin)
+            .then(response => {
+                console.log(response)
+            })
+        } else {
+            modifyUser(this.state.userdata.token, this.state.userdata.id, this.state.gender, this.state.firstname, this.state.lastname, this.state.password, this.state.email, this.state.phone, this.state.birthdate, this.state.city, this.state.country, this.state.photo, this.state.service)
             .then(response => {
                 console.log(response)
             })
@@ -112,18 +114,18 @@ export default class Form extends Component {
         return(
             <div className="user-form-container">
                 <form className="form-modify-add-user">
-                    <div>gender: <input type="text" value={this.props.gender} onChange={this.genderValue}/></div>
-                    <div>firstname: <input type="text" value={this.props.firstname} onChange={this.firstnameValue}/></div>
-                    <div>lastname: <input type="text" value={this.props.lastname} onChange={this.lastnameValue}/></div>
-                    {window.location.href.includes('add-user') && (<div>password: <input type="text" value={this.props.password} onChange={this.passwordValue}/></div>)}
-                    <div>email: <input type="text" value={this.props.email} onChange={this.emailValue}/></div>
-                    <div>phone: <input type="text" value={this.props.phone} onChange={this.phoneValue}/></div>
-                    <div>birthdate: <input type="text" value={this.props.birthdate} onChange={this.birthdateValue}/></div>
-                    <div>city: <input type="text" value={this.props.city} onChange={this.cityValue}/></div>
-                    <div>country: <input type="text" value={this.props.country} onChange={this.countryValue}/></div>
-                    <div>photo: <input type="text" value={this.props.photo} onChange={this.photoValue}/></div>
-                    <div>service: <input type="text" value={this.props.service} onChange={this.serviceValue}/></div>
-                    <div>isAdmin: <input type="text" value={this.props.isAdmin} onChange={this.isAdminValue}/></div>
+                    <div>gender: <input type="text" value={this.state.gender} onChange={this.genderValue}/></div>
+                    <div>firstname: <input type="text" value={this.state.firstname} onChange={this.firstnameValue}/></div>
+                    <div>lastname: <input type="text" value={this.state.lastname} onChange={this.lastnameValue}/></div>
+                    {window.location.href.includes('add-user') && (<div>password: <input type="text" value={this.state.password} onChange={this.passwordValue}/></div>)}
+                    <div>email: <input type="text" value={this.state.email} onChange={this.emailValue}/></div>
+                    <div>phone: <input type="text" value={this.state.phone} onChange={this.phoneValue}/></div>
+                    <div>birthdate: <input type="text" value={this.state.birthdate} onChange={this.birthdateValue}/></div>
+                    <div>city: <input type="text" value={this.state.city} onChange={this.cityValue}/></div>
+                    <div>country: <input type="text" value={this.state.country} onChange={this.countryValue}/></div>
+                    <div>photo: <input type="text" value={this.state.photo} onChange={this.photoValue}/></div>
+                    <div>service: <input type="text" value={this.state.service} onChange={this.serviceValue}/></div>
+                    {window.location.href.includes('add-user') && (<div>isAdmin: <input type="text" value={this.state.isAdmin} onChange={this.isAdminValue}/></div>)}
                 </form>
                 {window.location.href.includes('add-user') ? (<div className="add-user-btn" onClick={this.sendForm}>Ajouter</div>)
                  :

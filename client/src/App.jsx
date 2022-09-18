@@ -36,6 +36,7 @@ class App extends Component {
   render() {
     return (
       <section className="login-landing-container">
+        <h1>la plateforme qui vous permet de découvrir vos collaborateurs</h1>
         <div className="login-form-container"> 
           <form action="" className="login-form">
 
